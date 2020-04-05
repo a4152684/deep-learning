@@ -37,7 +37,12 @@ for i in range(20):
     predicted_score_matrix = model.predict(image_list)#预测，输出跟标签二值化后的Y_train类似
     label=lb.inverse_transform(predicted_score_matrix)#LabelBinarizer的方法
     result_list.append(label.tolist())
-    print(label.tolist())
+    
+    #打印结果
+    print(str(i)+":",end="")
+    for x in label.tolist():
+        print(x,end="")
+    print()
 
 #print(result_list)
 
